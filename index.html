@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Freedom Fighters Agency | Life Insurance & Recruiting</title>
+  <meta name="description" content="Freedom Fighters Agency helps families protect income and build long-term financial security. Book a call with us today." />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#111318;
+      --card2:#0f1116;
+      --text:#f6f7fb;
+      --muted:#b7bccb;
+      --gold:#f5c84b;
+      --gold2:#ffdd73;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 14px 45px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 10% -10%, rgba(245,200,75,.18), transparent 55%),
+        radial-gradient(900px 700px at 90% 10%, rgba(245,200,75,.10), transparent 55%),
+        radial-gradient(1000px 700px at 40% 120%, rgba(255,255,255,.06), transparent 55%),
+        var(--bg);
+      line-height:1.35;
+    }
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 18px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:rgba(11,12,16,.70);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand img{width:46px;height:46px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
+    .brand .name{font-weight:800;letter-spacing:.2px}
+    .brand .tag{font-size:12px;color:var(--muted)}
+    .navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .navlinks a{font-size:13px;color:var(--muted);text-decoration:none}
+    .navlinks a:hover{color:var(--text)}
+    .actions{display:flex;gap:10px;align-items:center}
+
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#111;
+      border-color:rgba(0,0,0,.15);
+    }
+    .btn.primary:hover{filter:brightness(1.02);transform:translateY(-1px)}
+    .btn.ghost{background:transparent}
+
+    /* Hero */
+    .hero{padding:44px 0 18px}
+    .heroGrid{display:grid;grid-template-columns: 1.1fr .9fr;gap:22px;align-items:stretch}
+    .heroCard{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroCard .inner{padding:26px}
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;font-weight:800;letter-spacing:.3px;
+      color:#161616;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      padding:7px 10px;border-radius:999px;
+    }
+    h1{margin:14px 0 10px;font-size:40px;line-height:1.05;letter-spacing:-.7px}
+    .sub{color:var(--muted);font-size:15px;max-width:54ch}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
+    .badge{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      padding:10px 12px;
+      border-radius:14px;
+      min-width:170px;
+    }
+    .badge b{display:block;font-size:13px}
+    .badge span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+
+    .heroMedia{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:var(--card);
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .heroMedia img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
+    .heroMedia .overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
+      pointer-events:none;
+    }
+    .heroMedia .ctaBox{
+      position:absolute;left:14px;right:14px;bottom:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(15,17,22,.70);
+      backdrop-filter: blur(10px);
+      border-radius:16px;
+      padding:14px;
+      display:flex;gap:10px;align-items:center;justify-content:space-between;
+    }
+    .ctaBox .mini{font-size:12px;color:var(--muted)}
+    .ctaBox .mini b{color:var(--text)}
+
+    /* Sections */
+    section{padding:34px 0}
+    .sectionTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .sectionTitle h2{margin:0;font-size:22px;letter-spacing:-.2px}
+    .sectionTitle p{margin:0;color:var(--muted);font-size:13px;max-width:55ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.30);
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    .mediaCard{padding:0;overflow:hidden}
+    .mediaCard img{width:100%;height:280px;object-fit:cover;display:block}
+    .mediaCard .cap{padding:14px 16px}
+    .cap b{display:block}
+    .cap span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+
+    /* CTA */
+    .cta{
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(800px 400px at 20% 0%, rgba(245,200,75,.22), transparent 60%),
+        radial-gradient(700px 420px at 90% 40%, rgba(255,221,115,.14), transparent 60%),
+        rgba(255,255,255,.04);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .ctaInner{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch;padding:18px}
+    .ctaLeft{padding:8px 8px 8px 12px}
+    .ctaLeft h2{margin:6px 0 10px;font-size:24px}
+    .ctaLeft p{margin:0;color:var(--muted);font-size:13px;max-width:62ch}
+    .ctaBtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+    .qrBox{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(15,17,22,.70);
+      border-radius:20px;
+      padding:14px;
+      display:flex;gap:12px;align-items:center;justify-content:space-between;
+      min-height:160px;
+    }
+    .qrBox img{width:120px;height:120px;object-fit:contain;border-radius:14px;background:#fff;padding:6px}
+    .qrBox .qrText b{display:block}
+    .qrBox .qrText span{display:block;margin-top:8px;color:var(--muted);font-size:12px}
+
+    /* Calendly */
+    .calWrap{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 10px 28px rgba(0,0,0,.35);
+    }
+    .calHead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+    .calHead b{font-size:14px}
+    .calHead span{font-size:12px;color:var(--muted)}
+    .calFrame{width:100%;height:760px;border:0;background:#fff}
+
+    /* Footer */
+    footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--line)}
+    .foot{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+    .foot b{color:var(--text)}
+    .foot a{color:var(--muted);text-decoration:none}
+    .foot a:hover{color:var(--text)}
+    .fine{font-size:12px;color:rgba(183,188,203,.85);max-width:90ch;margin-top:10px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr;}
+      .heroMedia img{height:420px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .ctaInner{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .navlinks{display:none}
+      .calFrame{height:820px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <img src="client_logo.jpeg" alt="Freedom Fighters Agency logo" />
+          <div>
+            <div class="name">Freedom Fighters Agency</div>
+            <div class="tag">Life Insurance • Financial Protection • Recruiting</div>
+          </div>
+        </div>
+
+        <div class="navlinks">
+          <a href="#clients">For Clients</a>
+          <a href="#recruits">For Recruits</a>
+          <a href="#calendly">Book</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="actions">
+          <a class="btn ghost" href="tel:7862694139">Call</a>
+          <a class="btn primary" href="#calendly">Book a Free Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="heroGrid">
+        <div class="heroCard">
+          <div class="inner">
+            <span class="kicker">⚡ Fast quotes • Simple process • Real protection</span>
+            <h1>Protect your family’s future — and build real financial freedom.</h1>
+            <p class="sub">We help families get properly covered and show motivated people how to build income in the life insurance business.</p>
+
+            <div class="badges">
+              <div class="badge"><b>For Clients</b><span>Term & permanent options tailored to your budget.</span></div>
+              <div class="badge"><b>For Recruits</b><span>Training, mentorship, and a clear path to growth.</span></div>
+              <div class="badge"><b>Book Online</b><span>Choose a time that works for you on Calendly.</span></div>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+              <a class="btn primary" href="#calendly">Schedule on Calendly</a>
+              <a class="btn" href="mailto:FF.EMP7@GMAIL.COM">Email Us</a>
+              <a class="btn" href="#clients">See How We Help</a>
+            </div>
+
+            <div style="margin-top:14px;color:var(--muted);font-size:12px">
+              Call/Text: <b style="color:var(--text)">786-269-4139</b> • Email: <b style="color:var(--text)">FF.EMP7@GMAIL.COM</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroMedia" aria-label="Freedom Fighters Agency hero image">
+          <img src="ff_panels.png" alt="Financial freedom and protection visuals" />
+          <div class="overlay"></div>
+          <div class="ctaBox">
+            <div class="mini"><b>Ready to get started?</b><br/>Book your free call in under 60 seconds.</div>
+            <a class="btn primary" href="#calendly">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="clients">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>For Clients</h2>
+            <p>Get covered the right way — protect income, cover final expenses, and build a plan your family can rely on.</p>
+          </div>
+          <a class="btn" href="#calendly">Get a Quote Call</a>
+        </div>
+
+        <div class="grid2">
+          <div class="card mediaCard">
+            <img src="ff_collage_buyterm.png" alt="Buy term and invest the difference" />
+            <div class="cap">
+              <b>Simple strategy. Real protection.</b>
+              <span>We’ll walk you through coverage options, budget, and what makes sense for your goals.</span>
+            </div>
+          </div>
+
+          <div class="grid3" style="grid-template-columns:1fr;gap:14px">
+            <div class="card">
+              <h3>✅ Fast, clear recommendations</h3>
+              <p>No pressure. We educate you and help you choose a policy that fits your needs.</p>
+            </div>
+            <div class="card">
+              <h3>✅ Family-first planning</h3>
+              <p>Income protection, debt coverage, final expense, and long-term stability.</p>
+            </div>
+            <div class="card">
+              <h3>✅ Easy next step</h3>
+              <p>Book a free call — we’ll ask a few questions and map out the best options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruits">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>For Future Agents</h2>
+            <p>Want to learn the business and build your own income stream? We’re recruiting coachable, motivated people.</p>
+          </div>
+          <a class="btn" href="#calendly">Book a Recruit Call</a>
+        </div>
+
+        <div class="grid2">
+          <div class="card mediaCard">
+            <img src="ff_recruiting.png" alt="Recruiting and mentorship visuals" />
+            <div class="cap">
+              <b>Mentorship + Training</b>
+              <span>We help you develop skills, confidence, and a consistent system to grow.</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>What you get</h3>
+            <p style="margin-top:10px">• Structured training + scripts<br>
+              • Help with follow-ups & consistency<br>
+              • Leadership development & accountability<br>
+              • A clear path to promotion and agency growth</p>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn primary" href="#calendly">Talk to Us</a>
+              <a class="btn" href="mailto:FF.EMP7@GMAIL.COM?subject=Recruit%20Interest%20-%20Freedom%20Fighters%20Agency">Email Recruiting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div class="ctaInner">
+            <div class="ctaLeft">
+              <div class="kicker" style="display:inline-flex">📌 Next step: Book your free call</div>
+              <h2>Let’s get you covered — or get you started.</h2>
+              <p>Choose a time on Calendly, and we’ll handle the rest. If you prefer, call or email us directly.</p>
+
+              <div class="ctaBtns">
+                <a class="btn primary" href="#calendly">Schedule on Calendly</a>
+                <a class="btn" href="tel:7862694139">Call 786-269-4139</a>
+                <a class="btn" href="mailto:FF.EMP7@GMAIL.COM">FF.EMP7@GMAIL.COM</a>
+              </div>
+            </div>
+
+            <div class="qrBox">
+              <div class="qrText">
+                <b>Scan to visit the site</b>
+                <span>Use your phone camera to open:<br><span style="color:var(--text)">freedomfightersagency.github.io</span></span>
+              </div>
+              <img src="ff_qr.png" alt="QR code to Freedom Fighters Agency website" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendly">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Book Your Call</h2>
+            <p>Pick a time that works for you. You’ll get a confirmation and reminders automatically.</p>
+          </div>
+          <a class="btn" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener">Open Calendly ↗</a>
+        </div>
+
+        <div class="calWrap">
+          <div class="calHead">
+            <b>Calendly Scheduling</b>
+            <span>https://calendly.com/myfiancialfreedom</span>
+          </div>
+          <iframe class="calFrame" src="https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1" title="Calendly booking"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Contact</h2>
+            <p>Prefer to reach out directly? We respond quickly.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>Call / Text</h3>
+            <p><a href="tel:7862694139">786-269-4139</a></p>
+          </div>
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:FF.EMP7@GMAIL.COM">FF.EMP7@GMAIL.COM</a></p>
+          </div>
+          <div class="card">
+            <h3>Website</h3>
+            <p><a href="https://freedomfightersagency.github.io/" target="_blank" rel="noopener">freedomfightersagency.github.io</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <b>Freedom Fighters Agency</b><br>
+          <span>Life Insurance • Financial Protection • Recruiting</span>
+          <div class="fine">This site is for informational purposes only and does not constitute legal or financial advice. Coverage availability and pricing vary based on underwriting and eligibility.</div>
+        </div>
+        <div>
+          <div><b>Quick Links</b></div>
+          <div style="margin-top:8px;display:grid;gap:6px">
+            <a href="#clients">For Clients</a>
+            <a href="#recruits">For Recruits</a>
+            <a href="#calendly">Book a Call</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        if(!id || id === '#') return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
