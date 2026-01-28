@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Fighters Agency</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Calendly widget (booking) -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  :root {
+    --primary-color: #000000;       /* black */
+    --secondary-color: #FFD700;     /* gold/yellow */
+    --light-bg: #f8f8f8;            /* light background */
+    --light-yellow: #FFF8E1;        /* soft yellow for testimonials */
+    --text-color: #333333;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
+  a { color: var(--secondary-color); text-decoration: none; }
+  /* Header */
+  header { background: linear-gradient(135deg, #1a1a1a, var(--primary-color)); color: #ffffff; padding: 50px 20px; }
+  .header-container { max-width: 1200px; margin: auto; display: flex; align-items: center; flex-wrap: wrap; }
+  .logo { width: 90px; height: auto; flex-shrink: 0; }
+  .hero-text { margin-left: 25px; flex: 1; }
+  .agency-name { margin: 0; font-size: 1.2rem; color: var(--secondary-color); font-weight: 600; }
+  .hero-text h1 { margin: 5px 0 0 0; font-size: 2.5rem; font-weight: 700; color: #ffffff; }
+  .hero-text p { margin-top: 12px; font-size: 1.2rem; color: #e0e0e0; }
+
+  /* Header actions */
+  .header-actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 18px; border-radius: 6px; font-weight: 700; letter-spacing: 0.2px; font-size: 0.98rem; }
+  .btn-primary { background: var(--secondary-color); color: var(--primary-color); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
+  .btn-primary:hover { background: #e0b900; }
+  .btn-outline { border: 2px solid rgba(255,255,255,0.55); color: #ffffff; }
+  .btn-outline:hover { border-color: var(--secondary-color); color: var(--secondary-color); }
+
+  /* Calendly embed */
+  .calendly-section { background: #fff; border-top: 6px solid var(--secondary-color); box-shadow: 0 3px 8px rgba(0,0,0,0.05); border-radius: 8px; padding: 28px 18px; }
+  .calendly-inline-widget { border-radius: 10px; overflow: hidden; }
+
+  /* Visual section */
+  .visual-section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+  .visual-section img { width: 100%; border-radius: 8px; display: block; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+
+  /* Section base */
+  section { padding: 70px 20px; max-width: 1200px; margin: auto; }
+  .section-title { text-align: center; font-size: 2rem; color: var(--primary-color); margin-bottom: 50px; font-weight: 700; }
+
+  /* Features section */
+  .features { display: flex; flex-wrap: wrap; justify-content: space-between; }
+  .feature { background: #ffffff; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); padding: 40px 30px; margin: 10px; flex: 1 1 calc(50% - 20px); min-width: 260px; position: relative; overflow: hidden; }
+  .feature::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--secondary-color); }
+  .feature .icon { width: 60px; height: 60px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: var(--primary-color); }
+  .feature h3 { color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.4rem; font-weight: 600; }
+  .feature p { margin-bottom: 0; }
+
+  /* Testimonials section */
+  .testimonials-wrapper { background: var(--light-yellow); padding: 60px 20px; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
+  .testimonials { display: flex; flex-wrap: wrap; justify-content: center; }
+  .testimonial { background: #ffffff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 30px; margin: 15px; flex: 1 1 300px; max-width: 380px; position: relative; }
+  .testimonial::before { content: "\201C"; font-size: 60px; position: absolute; top: -20px; left: 20px; color: var(--secondary-color); font-family: serif; }
+  .testimonial p { margin-top: 20px; font-style: italic; }
+  .testimonial strong { display: block; margin-top: 15px; color: var(--primary-color); font-weight: 600; }
+
+  /* CTA section */
+  .cta-section { background: #1a1a1a; color: #ffffff; border-radius: 8px; padding: 60px 30px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
+  .cta-section p { margin-bottom: 30px; font-size: 1.2rem; }
+  .cta-section form { max-width: 500px; margin: auto; }
+  .cta-section input, .cta-section textarea { width: 100%; padding: 14px; margin-bottom: 20px; border: none; border-radius: 4px; font-size: 1rem; color: var(--primary-color); }
+  .cta-section input::placeholder, .cta-section textarea::placeholder { color: #666; }
+  .cta-section button { background: var(--secondary-color); color: var(--primary-color); padding: 16px 26px; border: none; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
+  .cta-section button:hover { background: #e0b900; }
+
+  /* Footer */
+  footer { background: var(--primary-color); color: #ffffff; text-align: center; padding: 40px 20px; }
+  footer p { margin: 8px 0; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-container { flex-direction: column; text-align: center; }
+    .hero-text { margin-left: 0; margin-top: 20px; }
+    .features .feature { flex: 1 1 100%; }
+  }
+
+  /* Gallery section */
+  .visual-gallery { padding: 60px 20px; max-width: 1200px; margin: auto; }
+  .visual-gallery .section-title { margin-bottom: 40px; }
+  .gallery-images { display: flex; flex-wrap: wrap; gap: 20px; }
+  .gallery-images img { width: 100%; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+  @media (min-width: 768px) {
+    .gallery-images img { flex: 1 1 calc(50% - 20px); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <img src="client_logo.jpeg" alt="Freedom Fighters Agency Logo" class="logo">
+    <div class="hero-text">
+      <p class="agency-name">Freedom Fighters Agency</p>
+      <h1>Protect Your Family's Future Today</h1>
+      <p>Secure coverage tailored to your needs with a licensed expert in Miami, Florida.</p>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#book">Book a Free Call</a>
+        <a class="btn btn-outline" href="tel:7862694139">Call 786-269-4139</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Visual section with family and transaction illustration -->
+<section class="visual-section">
+  <img src="family_finance.png" alt="Illustration of a happy family and a financial transaction" />
+</section>
+
+<!-- Gallery section with additional illustrations -->
+<section class="visual-gallery">
+  <h2 class="section-title">Imagine Your Secure Future</h2>
+  <div class="gallery-images">
+    <img src="family_saving.png" alt="Illustration of a family saving money together" />
+    <img src="money_transaction.png" alt="Illustration of people making a financial transaction digitally" />
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Why Choose Us?</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">&#10004;</div>
+      <h3>Personalized Coverage</h3>
+      <p>We match policies to your life stage and budget—no cookie‑cutter solutions.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">&#128178;</div>
+      <h3>Affordable Premiums</h3>
+      <p>Access competitive rates and flexible payment options.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">&#128176;</div>
+      <h3>Trusted Expertise</h3>
+      <p>Work with a licensed broker who understands the latest life‑insurance trends and regulations.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">&#128218;</div>
+      <h3>Hybrid Solutions</h3>
+      <p>Choose from modern policies with riders like long‑term care and cash value.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Hear from Our Clients</h2>
+  <div class="testimonials-wrapper">
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>The team made the process simple and stress‑free. I feel secure knowing my family is protected.</p>
+        <strong>— Satisfied Client</strong>
+      </div>
+      <div class="testimonial">
+        <p>Professional and personable service. They took the time to understand my needs and explained everything clearly.</p>
+        <strong>— Happy Policyholder</strong>
+      </div>
+      <div class="testimonial">
+        <p>Exceptional guidance and competitive rates. I highly recommend this agency for anyone seeking life insurance.</p>
+        <strong>— Grateful Customer</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <h2 class="section-title">Book Your Free Consultation</h2>
+  <div class="calendly-section">
+    <p style="text-align:center; margin:0 0 14px;">Pick a time that works for you. You’ll get an instant confirmation and reminders.</p>
+    <div class="calendly-inline-widget"
+         data-url="https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1"
+         style="min-width:320px;height:760px;"></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Get Started</h2>
+  <div class="cta-section">
+    <p style="text-align:center; max-width: 720px; margin-left:auto; margin-right:auto;">
+      The fastest way to connect is to book a time on my calendar. Prefer a quick message instead? Email or call me anytime.
+    </p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:22px;">
+      <a class="btn btn-primary" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1'});return false;">Book on Calendly</a>
+      <a class="btn btn-outline" href="mailto:FF.EMP7@GMAIL.COM?subject=Life%20Insurance%20Consultation%20Request">Email FF.EMP7@GMAIL.COM</a>
+      <a class="btn btn-outline" href="tel:7862694139">Call 786-269-4139</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Serving clients in Miami, Florida and beyond | Freedom Fighters Agency</p>
+  <p>Email: FF.EMP7@GMAIL.COM | Phone: 786-269-4139</p>
+</footer>
+
+<!-- Calendly widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>
