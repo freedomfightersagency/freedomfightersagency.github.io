@@ -1,397 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#090a0d" />
-  <title>Freedom Fighters Agency | Protect What Matters. Build What’s Next.</title>
-  <meta name="description" content="Freedom Fighters Agency helps families explore life insurance protection and helps motivated people explore a career in financial services. Based in Miami, Florida." />
-  <style>
-    :root {
-      --bg:#090a0d;
-      --surface:#111318;
-      --surface-2:#171a20;
-      --text:#f7f7f4;
-      --muted:#b9bbc2;
-      --gold:#f5c84b;
-      --gold-light:#ffe18a;
-      --line:rgba(255,255,255,.12);
-      --gold-line:rgba(245,200,75,.34);
-      --shadow:0 24px 70px rgba(0,0,0,.42);
-      --radius:22px;
-      --content:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{
-      margin:0;
-      color:var(--text);
-      background:
-        radial-gradient(ellipse at 75% -12%,rgba(245,200,75,.13),transparent 34rem),
-        radial-gradient(ellipse at -10% 38%,rgba(245,200,75,.07),transparent 32rem),
-        var(--bg);
-      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.55;
-      -webkit-font-smoothing:antialiased;
-    }
-    a{color:inherit}
-    img{max-width:100%}
-    .container{width:min(var(--content),calc(100% - 44px));margin-inline:auto}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold-light);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
-    .gold{color:var(--gold)}
-    .muted{color:var(--muted)}
-    .topbar{position:sticky;top:0;z-index:100;background:rgba(9,10,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
-    .brand img{width:49px;height:49px;object-fit:cover;border-radius:13px;border:1px solid var(--gold-line);background:#fff}
-    .brand-name{display:block;font-weight:900;font-size:15px;letter-spacing:.025em;line-height:1.2}
-    .brand-tag{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
-    .navlinks{display:flex;align-items:center;gap:26px}
-    .navlinks a{color:#d1d1d4;text-decoration:none;font-size:12px;font-weight:750;transition:color .2s}
-    .navlinks a:hover{color:var(--gold)}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .menu-toggle{display:none}
-    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;min-height:47px;padding:0 19px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);color:var(--text);text-decoration:none;font-size:12px;font-weight:850;letter-spacing:.025em;transition:transform .2s,border-color .2s,background .2s;white-space:nowrap}
-    .btn:hover{transform:translateY(-2px);border-color:var(--gold-line);background:rgba(255,255,255,.075)}
-    .btn-primary{color:#17130a;background:linear-gradient(115deg,var(--gold),var(--gold-light));border-color:transparent;box-shadow:0 8px 28px rgba(245,200,75,.15)}
-    .btn-primary:hover{background:linear-gradient(115deg,var(--gold-light),var(--gold));border-color:transparent}
-    .btn-small{min-height:41px;padding-inline:15px}
-    .hero{padding:70px 0 62px;position:relative;overflow:hidden}
-    .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(245,200,75,.09);border-radius:50%;right:-210px;top:15px;pointer-events:none}
-    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:42px;align-items:center;position:relative;z-index:1}
-    .hero-copy{padding:12px 0}
-    h1{font-size:clamp(43px,6vw,76px);line-height:.99;letter-spacing:-.065em;margin:22px 0 22px;max-width:760px;font-weight:950}
-    h1 .gold{display:block}
-    .hero-lead{max-width:590px;color:#c4c5ca;font-size:16px;line-height:1.8;margin:0}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .hero-meta{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:30px;color:var(--muted);font-size:11px}
-    .hero-meta span{display:inline-flex;align-items:center;gap:8px}
-    .hero-meta i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block}
-    .hero-visual{position:relative;min-height:550px;border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:#14161b;box-shadow:var(--shadow)}
-    .hero-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-    .hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 20%,rgba(0,0,0,.12) 42%,rgba(0,0,0,.84) 100%)}
-    .visual-label{position:absolute;z-index:2;left:25px;right:25px;bottom:25px}
-    .visual-label .eyebrow{font-size:10px}
-    .visual-label h2{font-size:28px;line-height:1.12;letter-spacing:-.04em;margin:12px 0 8px;max-width:420px}
-    .visual-label p{color:#dedee0;font-size:12px;margin:0;max-width:410px}
-    .visual-stamp{position:absolute;z-index:2;top:20px;right:20px;border:1px solid rgba(255,255,255,.25);background:rgba(10,11,14,.58);backdrop-filter:blur(10px);border-radius:14px;padding:12px 15px;text-align:right}
-    .visual-stamp strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-    .visual-stamp span{display:block;color:var(--gold-light);font-size:10px;margin-top:3px}
-    .trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.018)}
-    .trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 0}
-    .trust-item{display:flex;align-items:center;justify-content:center;gap:12px;text-align:left}
-    .trust-icon{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--gold-line);border-radius:12px;color:var(--gold);font-size:17px;flex:0 0 auto}
-    .trust-item strong{display:block;font-size:12px}
-    .trust-item small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
-    section.section{padding:92px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
-    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.04;letter-spacing:-.055em;margin:13px 0 0;font-weight:930}
-    .section-head p{max-width:460px;margin:0;color:var(--muted);font-size:13px;line-height:1.8}
-    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-    .pillar{position:relative;min-height:265px;padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.014));overflow:hidden;transition:transform .25s,border-color .25s}
-    .pillar:hover{transform:translateY(-5px);border-color:var(--gold-line)}
-    .pillar-number{font-size:11px;color:var(--gold);font-weight:900;letter-spacing:.16em}
-    .pillar-mark{width:47px;height:47px;border:1px solid var(--gold-line);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-size:21px;margin:25px 0 20px}
-    .pillar h3{font-size:19px;letter-spacing:-.025em;margin:0 0 10px}
-    .pillar p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}
-    .pillar a{display:inline-block;margin-top:18px;color:var(--gold-light);font-size:11px;font-weight:850;text-decoration:none}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
-    .feature-image{min-height:420px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
-    .feature-image img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block}
-    .feature-copy{padding:clamp(26px,4vw,48px);border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#17191f,#101115)}
-    .feature-copy h2{font-size:clamp(29px,3.5vw,43px);line-height:1.05;letter-spacing:-.055em;margin:15px 0}
-    .feature-copy>p{font-size:13px;color:var(--muted);line-height:1.85;margin:0}
-    .check-list{list-style:none;padding:0;margin:25px 0 27px;display:grid;gap:15px}
-    .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:12px;color:#e5e5e7}
-    .check-list li:before{content:"✓";display:grid;place-items:center;width:21px;height:21px;flex:0 0 21px;border-radius:7px;background:rgba(245,200,75,.12);color:var(--gold);font-weight:950}
-    .recruit-section{background:linear-gradient(180deg,transparent,rgba(245,200,75,.035),transparent)}
-    .recruit-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:#111318;box-shadow:var(--shadow)}
-    .recruit-copy{padding:clamp(28px,5vw,58px)}
-    .recruit-copy h2{font-size:clamp(34px,4.2vw,52px);line-height:1;letter-spacing:-.06em;margin:17px 0}
-    .recruit-copy p{font-size:13px;color:var(--muted);line-height:1.85}
-    .recruit-image{min-height:480px;background:#17191e}
-    .recruit-image img{width:100%;height:100%;min-height:480px;object-fit:cover;display:block}
-    .recruit-note{font-size:10px!important;color:#92949c!important;margin-top:18px}
-    .playbook-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .playbook-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
-    .playbook-card img{width:100%;height:300px;display:block;object-fit:cover}
-    .playbook-caption{padding:20px 22px}
-    .playbook-caption strong{display:block;font-size:16px}
-    .playbook-caption span{display:block;margin-top:7px;color:var(--muted);font-size:11px;line-height:1.7}
-    .booking{padding:0 0 92px!important}
-    .booking-panel{border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:linear-gradient(140deg,rgba(245,200,75,.10),rgba(255,255,255,.025) 45%),var(--surface);box-shadow:var(--shadow)}
-    .booking-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:35px 38px;border-bottom:1px solid var(--line)}
-    .booking-head h2{font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.055em;margin:12px 0 0}
-    .booking-head p{font-size:12px;color:var(--muted);margin:9px 0 0}
-    .calendly-frame{width:100%;height:760px;border:0;display:block;background:#fff}
-    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .contact-main{padding:35px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
-    .contact-main h2{font-size:clamp(30px,4vw,43px);line-height:1.05;letter-spacing:-.05em;margin:12px 0}
-    .contact-main p{color:var(--muted);font-size:12px;line-height:1.8;max-width:480px}
-    .contact-links{display:grid;gap:12px}
-    .contact-link{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);text-decoration:none}
-    .contact-link small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em}
-    .contact-link strong{display:block;font-size:13px;margin-top:4px}
-    .contact-link em{font-style:normal;color:var(--gold);font-size:18px}
-    .qr-row{display:flex;align-items:center;gap:17px;margin-top:25px;padding-top:23px;border-top:1px solid var(--line)}
-    .qr-row img{width:86px;height:86px;padding:5px;border-radius:12px;background:#fff;object-fit:contain}
-    .qr-row strong{font-size:12px}
-    .qr-row span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
-    footer{border-top:1px solid var(--line);padding:28px 0 35px;background:rgba(0,0,0,.16)}
-    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
-    .footer-brand{display:flex;align-items:center;gap:12px}
-    .footer-brand img{width:38px;height:38px;border-radius:10px;object-fit:cover;background:#fff}
-    .footer-brand strong{display:block;font-size:12px}
-    .footer-brand span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
-    .footer-links a{font-size:10px;color:var(--muted);text-decoration:none}
-    .footer-links a:hover{color:var(--gold)}
-    .fine-print{max-width:850px;color:#858791;font-size:10px;line-height:1.7;margin:20px 0 0}
-    @media(max-width:900px){
-      .navlinks{gap:14px}.navlinks a{font-size:11px}
-      .hero-grid{grid-template-columns:1fr;gap:28px}
-      .hero{padding-top:48px}.hero-visual{min-height:480px}
-      .section-head{align-items:flex-start;flex-direction:column}
-      .recruit-card{grid-template-columns:1fr}.recruit-image,.recruit-image img{min-height:350px;max-height:480px}
-    }
-    @media(max-width:680px){
-      .container{width:min(100% - 32px,var(--content))}
-      .nav{min-height:72px}.brand img{width:42px;height:42px}.brand-name{font-size:13px}.brand-tag{font-size:8px}
-      .nav-actions .btn{display:none}
-      .menu-toggle{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--text);font-size:20px}
-      .navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px 22px;background:#0d0e12;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
-      .navlinks.open{display:flex}
-      .navlinks a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px}
-      h1{font-size:clamp(42px,13vw,62px)}
-      .hero{padding:37px 0 42px}.hero-lead{font-size:14px}
-      .hero-visual{min-height:390px;border-radius:21px}
-      .visual-label{left:19px;right:19px;bottom:20px}.visual-label h2{font-size:23px}
-      .visual-stamp{top:14px;right:14px}
-      .trust-inner{grid-template-columns:1fr;gap:15px;padding:19px 0}
-      .trust-item{justify-content:flex-start}
-      section.section{padding:66px 0}
-      .pillars,.split,.playbook-grid,.contact-grid{grid-template-columns:1fr}
-      .pillar{min-height:220px}
-      .feature-image,.feature-image img{min-height:290px;max-height:360px}
-      .booking{padding-bottom:66px!important}
-      .booking-head{padding:25px 22px;align-items:flex-start;flex-direction:column}
-      .calendly-frame{height:720px}
-      .contact-main{padding:27px 22px}
-      .qr-row{align-items:center}
-      .footer-inner{flex-direction:column}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a0d">
+<title>Life Insurance & Mortgage Protection in Florida | Freedom Fighters Agency</title>
+<meta name="description" content="Explore term life insurance, mortgage protection, and family coverage options with Frantzy Francois at Freedom Fighters Agency in Florida. Get clear information and book a conversation.">
+<style>
+:root{--bg:#090a0d;--panel:#12151b;--panel2:#171b22;--text:#f7f7f4;--muted:#b9bbc2;--gold:#f5c84b;--gold2:#ffe18a;--line:rgba(255,255,255,.12);--goldline:rgba(245,200,75,.35);--radius:22px;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:radial-gradient(ellipse at 78% -10%,rgba(245,200,75,.14),transparent 35rem),var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}.gold{color:var(--gold)}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);font-weight:900}.top{position:sticky;top:0;z-index:20;background:rgba(9,10,13,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand img{width:46px;height:46px;object-fit:cover;border-radius:12px;background:white}.brand b{display:block;font-size:13px;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.links{display:flex;gap:22px;align-items:center}.links a{font-size:11px;color:#d4d4d6;text-decoration:none;font-weight:750}.links a:hover{color:var(--gold)}.btn{min-height:46px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);text-decoration:none;font-size:11px;font-weight:850;white-space:nowrap}.btn:hover{border-color:var(--goldline);background:rgba(255,255,255,.07)}.primary{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#17130a;border:0}.hero{padding:72px 0 66px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.hero h1{font-size:clamp(42px,6vw,72px);line-height:.99;letter-spacing:-.06em;margin:17px 0 20px;font-weight:950}.lead{font-size:16px;color:#c8c9ce;max-width:610px;line-height:1.85}.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}.micro{font-size:10px;color:var(--muted);margin-top:20px}.portrait{position:relative;max-width:460px;margin-left:auto}.portrait img{display:block;width:100%;max-height:570px;object-fit:cover;object-position:center 20%;border-radius:26px;border:1px solid var(--goldline);box-shadow:0 25px 70px rgba(0,0,0,.45)}.portrait-caption{position:absolute;left:16px;right:16px;bottom:16px;padding:14px 17px;border:1px solid rgba(255,255,255,.16);border-radius:15px;background:rgba(8,9,12,.78);backdrop-filter:blur(12px)}.portrait-caption b{display:block;font-size:14px}.portrait-caption span{font-size:10px;color:var(--muted)}.proofbar{border-block:1px solid var(--line);background:rgba(255,255,255,.02)}.proofgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px 0}.proofgrid div{display:flex;align-items:center;justify-content:center;gap:11px}.proofgrid i{font-style:normal;color:var(--gold);font-size:21px}.proofgrid b{display:block;font-size:11px}.proofgrid small{display:block;color:var(--muted);font-size:9px}.section{padding:82px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:28px}.section h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.05em;margin:10px 0}.section-head p{max-width:440px;color:var(--muted);font-size:12px;line-height:1.8;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015))}.card .num{color:var(--gold);font-size:10px;letter-spacing:.15em;font-weight:900}.card h3{font-size:18px;margin:18px 0 9px}.card p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}.card a{display:inline-block;margin-top:18px;color:var(--gold2);font-size:11px;font-weight:850;text-decoration:none}.education{display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel)}.edu img{width:100%;height:230px;object-fit:cover;display:block}.edu div{padding:20px}.edu h3{margin:0 0 7px;font-size:17px}.edu p{margin:0;color:var(--muted);font-size:11px;line-height:1.8}.profile{display:grid;grid-template-columns:180px 1fr;gap:26px;align-items:center;border:1px solid var(--goldline);border-radius:24px;padding:26px;background:linear-gradient(120deg,rgba(245,200,75,.09),rgba(255,255,255,.02))}.profile img{width:180px;height:210px;object-fit:cover;object-position:center 20%;border-radius:17px}.profile h2{margin:8px 0;font-size:30px}.profile p{color:var(--muted);font-size:12px;line-height:1.85}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:22px;border-top:2px solid var(--gold);background:rgba(255,255,255,.03);border-radius:0 0 16px 16px}.step b{font-size:13px}.step p{color:var(--muted);font-size:11px;line-height:1.8}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{cursor:pointer;font-size:13px;font-weight:800}.faq details p{max-width:800px;color:var(--muted);font-size:12px;line-height:1.8}.booking{border:1px solid var(--goldline);border-radius:26px;padding:32px;background:linear-gradient(135deg,rgba(245,200,75,.11),rgba(255,255,255,.02)),var(--panel)}.booking p{color:var(--muted);font-size:12px;max-width:600px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}.contact a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.025)}.contact small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.12em}.contact b{font-size:13px}.recruit{padding:18px 0 38px;border-top:1px solid var(--line);margin-top:35px}.recruit p{font-size:11px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:25px 0 35px;color:var(--muted);font-size:10px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot a{color:var(--muted);text-decoration:none}.fine{font-size:9px;line-height:1.8;max-width:850px;margin-top:18px;color:#858791}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:30px}.portrait{margin:0;max-width:520px}.section-head{display:block}.section-head p{margin-top:12px}.cards{grid-template-columns:1fr 1fr}.links{gap:12px}.links a{font-size:10px}}
+@media(max-width:620px){.container{width:calc(100% - 32px)}nav{min-height:70px}.links{display:none}.nav-cta{display:none}.hero{padding:44px 0}.hero h1{font-size:45px}.lead{font-size:14px}.portrait img{max-height:440px}.proofgrid{grid-template-columns:1fr;gap:13px}.proofgrid div{justify-content:flex-start}.section{padding:60px 0}.cards,.education,.steps,.contact{grid-template-columns:1fr}.profile{grid-template-columns:100px 1fr;padding:17px;gap:15px}.profile img{width:100px;height:130px}.profile h2{font-size:23px}.booking{padding:23px}.foot{display:block}.foot>*{margin-bottom:10px}}
+</style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#top" aria-label="Freedom Fighters Agency home">
-          <img src="client_logo.jpeg" alt="Freedom Fighters Agency logo" />
-          <span><span class="brand-name">FREEDOM FIGHTERS AGENCY</span><span class="brand-tag">Protection · Education · Opportunity</span></span>
-        </a>
-        <div class="navlinks" id="navlinks">
-          <a href="life-insurance.html">Life Insurance</a>
-          <a href="life-insurance.html#mortgage">Mortgage Protection</a>
-          <a href="#about">Our Approach</a>
-          <a href="agent-opportunity.html">Agent Opportunity</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-actions">
-          <a class="btn btn-primary btn-small" href="#calendly">Book a Conversation <span aria-hidden="true">↗</span></a>
-          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Miami, Florida · Financial services</span>
-          <h1>Protect what matters.<span class="gold">Build what’s next.</span></h1>
-          <p class="hero-lead">Your family deserves a thoughtful protection strategy. Your ambition deserves room to grow. Freedom Fighters Agency brings education, guidance, and opportunity together—so you can take your next step with confidence.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#calendly">Explore Your Options <span aria-hidden="true">↗</span></a>
-            <a class="btn" href="agent-opportunity.html">Explore the Opportunity</a>
-          </div>
-          <div class="hero-meta">
-            <span><i></i> Personal guidance</span>
-            <span><i></i> Education-first conversations</span>
-            <span><i></i> Flexible online booking</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="ff_panels.png" alt="Freedom Fighters financial protection and financial education visual" />
-          <div class="visual-stamp"><strong>Freedom Fighters</strong><span>Purpose with a plan</span></div>
-          <div class="visual-label">
-            <span class="eyebrow">A stronger foundation starts here</span>
-            <h2>Make informed moves for the people and future you care about.</h2>
-            <p>Explore family protection, financial education, and a business opportunity built around learning and service.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="trust-strip">
-    <div class="container trust-inner">
-      <div class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span><span><strong>Family-first protection</strong><small>Understand your coverage choices</small></span></div>
-      <div class="trust-item"><span class="trust-icon" aria-hidden="true">↗</span><span><strong>Financial education</strong><small>Build knowledge before decisions</small></span></div>
-      <div class="trust-item"><span class="trust-icon" aria-hidden="true">✦</span><span><strong>Agent development</strong><small>Learn with training and mentorship</small></span></div>
-    </div>
-  </div>
-
-  <main>
-    <section class="section" id="solutions">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="eyebrow">The Freedom Fighters approach</span><h2>Three ways to move<br><span class="gold">your future forward.</span></h2></div>
-          <p>Whether you’re protecting the people who count on you or exploring a new professional direction, start with clear information and a conversation about your goals.</p>
-        </div>
-        <div class="pillars">
-          <article class="pillar"><span class="pillar-number">01 / PROTECT</span><div class="pillar-mark" aria-hidden="true">⌂</div><h3>Family Protection</h3><p>Explore life insurance options that may help protect loved ones, income, and financial responsibilities if the unexpected happens.</p><a href="life-insurance.html">Explore protection ↗</a></article>
-          <article class="pillar"><span class="pillar-number">02 / LEARN</span><div class="pillar-mark" aria-hidden="true">◎</div><h3>Wealth Education</h3><p>Build a stronger financial foundation through practical conversations about budgeting, saving, long-term planning, and financial concepts.</p><a href="#playbook">Explore the playbook ↗</a></article>
-          <article class="pillar"><span class="pillar-number">03 / GROW</span><div class="pillar-mark" aria-hidden="true">✦</div><h3>Business Opportunity</h3><p>Learn what it takes to enter the financial-services industry, develop professional skills, and explore an agent opportunity.</p><a href="agent-opportunity.html">Explore the opportunity ↗</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="clients">
-      <div class="container">
-        <div class="split">
-          <div class="feature-image"><img src="ff_collage_buyterm.png" alt="Financial education graphic about buying term life insurance and investing the difference" loading="lazy" /></div>
-          <div class="feature-copy">
-            <span class="eyebrow">For families and individuals</span>
-            <h2>Protection should start with <span class="gold">understanding.</span></h2>
-            <p>Life insurance is not one-size-fits-all. We help you understand the questions to ask and the options available for your situation before you make a decision.</p>
-            <ul class="check-list">
-              <li>Review mortgage, income, debt, and family responsibilities</li>
-              <li>Understand term and permanent life insurance options</li>
-              <li>Discuss coverage needs, affordability, and eligibility</li>
-              <li>Take the time to make an informed choice—without pressure</li>
-            </ul>
-            <a class="btn btn-primary" href="#calendly">Start a protection conversation ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="eyebrow">A more personal approach</span><h2>Guidance starts with<br><span class="gold">a conversation.</span></h2></div>
-          <p>Choosing life insurance is personal. We believe people deserve clear explanations, thoughtful questions, and time to understand their options—not pressure to make a rushed decision.</p>
-        </div>
-        <div class="grid2" style="margin-bottom:18px">
-          <div class="card" style="display:flex;gap:18px;align-items:center;border-color:var(--gold-line)">
-            <img src="frantzy-headshot.jpg" alt="Frantzy Francois, Florida-licensed life insurance professional" style="width:104px;height:124px;flex:0 0 104px;object-fit:cover;object-position:center 22%;border-radius:16px;border:1px solid var(--gold-line)">
-            <div><span class="eyebrow">Your insurance contact</span><h3 style="margin:6px 0 3px;font-size:21px">Frantzy Francois</h3><p style="margin:0;color:var(--muted);font-size:12px">Florida-licensed life insurance professional · Freedom Fighters Agency</p></div>
-          </div>
-          <div class="card"><h3>Personal guidance. Clear answers.</h3><p>Connect with Frantzy to discuss your family’s protection goals, understand available coverage options, and ask questions before deciding what may be right for you.</p><p style="margin-top:10px"><a class="btn btn-primary btn-small" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener">Schedule with Frantzy ↗</a></p></div>
-        </div>
-        <div class="pillars">
-          <article class="pillar"><span class="pillar-number">01 / LISTEN</span><div class="pillar-mark" aria-hidden="true">◎</div><h3>Understand your priorities</h3><p>We start with your family, financial responsibilities, budget, and the questions you want answered.</p></article>
-          <article class="pillar"><span class="pillar-number">02 / EXPLAIN</span><div class="pillar-mark" aria-hidden="true">◇</div><h3>Compare available options</h3><p>Review relevant policy types, benefits, costs, limitations, and underwriting requirements.</p></article>
-          <article class="pillar"><span class="pillar-number">03 / DECIDE</span><div class="pillar-mark" aria-hidden="true">✓</div><h3>Choose at your pace</h3><p>Make an informed decision based on your circumstances and the actual policy terms.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section recruit-section" id="recruits">
-      <div class="container">
-        <div class="recruit-card">
-          <div class="recruit-copy">
-            <span class="eyebrow">For future financial professionals</span>
-            <h2>Turn your ambition into <span class="gold">a new direction.</span></h2>
-            <p>Interested in the financial-services business? Explore what it means to become an agent, learn the licensing path, and see how training and mentorship can support your development.</p>
-            <ul class="check-list">
-              <li>Learn about the industry and agent responsibilities</li>
-              <li>Explore training, mentorship, and professional development</li>
-              <li>Understand licensing requirements and the steps to get started</li>
-              <li>Ask questions and decide whether the opportunity fits your goals</li>
-            </ul>
-            <a class="btn btn-primary" href="mailto:FF.EMP7@GMAIL.COM?subject=Agent%20Opportunity%20-%20Freedom%20Fighters%20Agency">Ask About Joining the Agency ↗</a>
-            <p class="recruit-note">Business opportunity details, licensing requirements, compensation, and results vary. No income or advancement is guaranteed.</p>
-          </div>
-          <div class="recruit-image"><img src="ff_recruiting.png" alt="Freedom Fighters Agency recruiting and mentorship graphic" loading="lazy" /></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="playbook">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="eyebrow">Learn. Prepare. Take action.</span><h2>The Freedom Fighters<br><span class="gold">playbook.</span></h2></div>
-          <p>Use our educational visuals as a starting point for better questions and more informed conversations about protecting your family and planning ahead.</p>
-        </div>
-        <div class="playbook-grid">
-          <article class="playbook-card"><img src="ff_collage_buyterm.png" alt="Buy term and invest the difference educational graphic" loading="lazy" /><div class="playbook-caption"><strong>Understand your protection strategy</strong><span>Explore the role term life insurance may play in a broader financial plan. Individual needs and circumstances differ.</span></div></article>
-          <article class="playbook-card"><img src="ff_panels.png" alt="Freedom Fighters financial education and agency panels" loading="lazy" /><div class="playbook-caption"><strong>Build your financial knowledge</strong><span>Start with the fundamentals, ask questions, and make decisions that reflect your goals and responsibilities.</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section booking" id="calendly">
-      <div class="container">
-        <div class="booking-panel">
-          <div class="booking-head">
-            <div><span class="eyebrow">Your next step</span><h2>Let’s have a conversation.</h2><p>Choose a time that works for you. We’ll connect and discuss what you’re looking to accomplish.</p></div>
-            <a class="btn btn-primary" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener noreferrer">Open Calendly ↗</a>
-          </div>
-          <iframe class="calendly-frame" src="https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1" title="Schedule a conversation with Freedom Fighters Agency" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-main">
-            <span class="eyebrow">Stay connected</span>
-            <h2>Ready when <span class="gold">you are.</span></h2>
-            <p>Have a question about life insurance, financial education, or the agent opportunity? Reach out directly or book a time online.</p>
-            <div class="qr-row"><img src="ff_qr.png" alt="QR code for Freedom Fighters Agency website" loading="lazy" /><div><strong>Keep us one scan away.</strong><span>Scan to visit the Freedom Fighters Agency website.</span></div></div>
-          </div>
-          <div class="contact-links">
-            <a class="contact-link" href="tel:3053056720"><span><small>Call or text</small><strong>305-305-6720</strong></span><em aria-hidden="true">↗</em></a>
-            <a class="contact-link" href="mailto:FF.EMP7@GMAIL.COM"><span><small>Email</small><strong>FF.EMP7@GMAIL.COM</strong></span><em aria-hidden="true">↗</em></a>
-            <a class="contact-link" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener noreferrer"><span><small>Schedule online</small><strong>Book through Calendly</strong></span><em aria-hidden="true">↗</em></a>
-            <a class="contact-link" href="https://www.tiktok.com/@frantzyfrancois2" target="_blank" rel="noopener noreferrer"><span><small>Follow along</small><strong>TikTok · @frantzyfrancois2</strong></span><em aria-hidden="true">↗</em></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand"><img src="client_logo.jpeg" alt="" /><div><strong>FREEDOM FIGHTERS AGENCY</strong><span>Life insurance · Financial education · Agent opportunity</span></div></div>
-        <div class="footer-links"><a href="#solutions">What We Do</a><a href="life-insurance.html">Family Protection</a><a href="agent-opportunity.html">Join the Team</a><a href="#calendly">Book a Call</a><a href="#contact">Contact</a></div>
-      </div>
-      <p class="fine-print">This website is for informational and educational purposes only and is not legal, tax, or investment advice. Life insurance products, features, premiums, and availability are subject to carrier terms, underwriting, and eligibility. Product recommendations depend on individual circumstances. Agent business opportunity, compensation, licensing requirements, and results vary; no income or advancement is guaranteed. Please speak with an appropriately licensed professional about your individual situation.</p>
-    </div>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navlinks = document.getElementById('navlinks');
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navlinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-      menuToggle.textContent = isOpen ? '×' : '☰';
-    });
-    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navlinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open navigation');
-      menuToggle.textContent = '☰';
-    }));
-  </script>
-</body>
-</html>
+<header class="top"><div class="container"><nav>
+<a class="brand" href="index.html"><img src="client_logo.jpeg" alt="Freedom Fighters Agency logo"><span><b>FREEDOM FIGHTERS AGENCY</b><small>Family protection · Financial education</small></span></a>
+<div class="links"><a href="life-insurance.html">Life Insurance</a><a href="life-insurance.html#mortgage">Mortgage Protection</a><a href="#about">Meet Frantzy</a><a href="#faq">FAQs</a><a href="agent-opportunity.html">Agent Opportunity</a></div>
+<a class="btn primary nav-cta" href="#book">Book a Conversation ↗</a>
+</nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><span class="eyebrow">Florida · Family life insurance guidance</span>
+<h1>Protect your family.<span class="gold">Protect your home.</span></h1>
+<p class="lead">If your family depends on your income, what would happen if it suddenly disappeared? Explore life insurance and mortgage protection options with clear explanations, personal guidance, and no pressure to make a decision on the spot.</p>
+<div class="actions"><a class="btn primary" href="life-insurance.html">Explore Life Insurance Options ↗</a><a class="btn" href="#book">Talk with Frantzy</a></div>
+<p class="micro">Start with information. Ask questions. Decide what makes sense for your family.</p></div>
+<div class="portrait"><img src="frantzy-headshot.jpg" alt="Frantzy Francois, Florida-licensed life insurance professional"><div class="portrait-caption"><b>Frantzy Francois</b><span>Florida-licensed life insurance professional · Freedom Fighters Agency</span></div></div>
+</div></section>
+<div class="proofbar"><div class="container proofgrid">
+<div><i>01</i><span><b>Understand your options</b><small>Plain-language explanations</small></span></div>
+<div><i>02</i><span><b>Consider your family’s needs</b><small>Coverage conversations built around you</small></span></div>
+<div><i>03</i><span><b>Choose at your pace</b><small>No obligation to purchase</small></span></div>
+</div></div>
+<section class="section" id="solutions"><div class="container">
+<div class="section-head"><div><span class="eyebrow">Start with what you want to protect</span><h2>Life insurance questions,<br><span class="gold">answered clearly.</span></h2></div><p>You do not need to know all the insurance terminology before you start. These guides explain common coverage options and the questions worth asking.</p></div>
+<div class="cards">
+<article class="card"><span class="num">01 / TERM LIFE</span><h3>Term Life Insurance</h3><p>Learn how coverage for a selected period works, what happens at the end of the term, and why families often compare term options.</p><a href="life-insurance.html#term">Understand term life ↗</a></article>
+<article class="card"><span class="num">02 / MORTGAGE</span><h3>Mortgage Protection</h3><p>Explore how life insurance may help loved ones manage mortgage payments and other household responsibilities after a covered loss.</p><a href="life-insurance.html#mortgage">Understand mortgage protection ↗</a></article>
+<article class="card"><span class="num">03 / FAMILY PLAN</span><h3>Family Coverage Planning</h3><p>Think through income replacement, childcare, debts, education costs, existing savings, and a premium that fits your budget.</p><a href="life-insurance.html#needs">Explore coverage needs ↗</a></article>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="section-head"><div><span class="eyebrow">Learn before you decide</span><h2>Build your insurance<br><span class="gold">knowledge first.</span></h2></div><p>Good decisions begin with understanding how products work—not with pressure or promises.</p></div>
+<div class="education">
+<article class="edu"><img src="ff_collage_buyterm.png" alt="Educational graphic about term life insurance and investing the difference" loading="lazy"><div><h3>Term vs. Whole Life</h3><p>Understand the differences in coverage duration, premiums, cash value, and the purpose each type may serve.</p><a href="life-insurance.html#compare">Compare the basics ↗</a></div></article>
+<article class="edu"><img src="ff_panels.png" alt="Freedom Fighters Agency family financial protection education graphic" loading="lazy"><div><h3>Mortgage Protection Explained</h3><p>Learn how an individually owned life insurance policy can differ from lender-provided mortgage life insurance and private mortgage insurance.</p><a href="life-insurance.html#mortgage">Read the mortgage guide ↗</a></div></article>
+</div></div></section>
+<section class="section" id="about" style="padding-top:0"><div class="container"><div class="profile"><img src="frantzy-headshot.jpg" alt="Frantzy Francois"><div><span class="eyebrow">Your point of contact</span><h2>Meet <span class="gold">Frantzy Francois.</span></h2><p>I help individuals and families understand life insurance options and consider how coverage may fit their responsibilities and goals. My approach is education first: explain the choices, answer questions, and help you understand the next steps.</p><a class="btn primary" href="#book">Schedule a conversation ↗</a></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="section-head"><div><span class="eyebrow">A simple process</span><h2>What happens when<br><span class="gold">you reach out?</span></h2></div><p>You can ask questions and learn about the process before deciding whether to apply for coverage.</p></div><div class="steps">
+<div class="step"><b>01. Tell me what matters</b><p>Share what you want to protect—your mortgage, income, children, or other family responsibilities.</p></div>
+<div class="step"><b>02. Review possible options</b><p>Discuss coverage types, budget considerations, eligibility, and questions to ask about policy terms.</p></div>
+<div class="step"><b>03. Decide what works for you</b><p>Take time to review the information. An application or purchase is your choice, not an obligation.</p></div>
+</div></div></section>
+<section class="section" id="faq" style="padding-top:0"><div class="container faq"><span class="eyebrow">Before you book</span><h2>Questions families often ask.</h2>
+<details><summary>How much life insurance coverage do I need?</summary><p>There is no single number that fits everyone. Consider mortgage and other debts, income replacement, dependents, childcare, education goals, existing savings, current coverage, and what your household can afford.</p></details>
+<details><summary>Is mortgage protection the same as private mortgage insurance?</summary><p>No. Life insurance used for mortgage protection may provide a death benefit to a named beneficiary. Private mortgage insurance generally protects the lender against certain loan losses. Product structures and terms differ.</p></details>
+<details><summary>Do I have to buy a policy after speaking with you?</summary><p>No. A conversation is an opportunity to ask questions and understand options. You can take time to review any proposed coverage before deciding.</p></details>
+<details><summary>Can I get life insurance if I have health conditions?</summary><p>Possibly. Eligibility and pricing depend on the insurer’s underwriting guidelines and your individual circumstances. Only the insurer can determine an application outcome.</p></details>
+<p style="font-size:11px;color:var(--muted)">Want more detail? Visit our <a href="life-insurance.html" style="color:var(--gold2)">Life Insurance Education Center</a> for product explanations and additional FAQs.</p>
+</div></section>
+<section class="section" id="book" style="padding-top:0"><div class="container"><div class="booking"><span class="eyebrow">Your next step</span><h2>Let’s talk about what<br><span class="gold">you want to protect.</span></h2><p>Schedule a conversation with Frantzy Francois. Bring your questions—we’ll discuss your goals and the options that may be available for your situation.</p><div class="actions"><a class="btn primary" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener noreferrer">Book through Calendly ↗</a><a class="btn" href="tel:3053056720">Call 305-305-6720</a></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="section-head"><div><span class="eyebrow">Get in touch</span><h2>Questions? Reach out.</h2></div><p>Contact Freedom Fighters Agency directly or book a time online.</p></div><div class="contact"><a href="tel:3053056720"><small>Call or text</small><b>305-305-6720</b></a><a href="mailto:FF.EMP7@GMAIL.COM"><small>Email</small><b>FF.EMP7@GMAIL.COM</b></a></div>
+<div class="recruit"><b>Interested in becoming an agent instead?</b><p>We keep our business opportunity information separate so families can focus on their insurance questions. <a href="agent-opportunity.html" style="color:var(--gold2)">Explore the agent opportunity ↗</a></p></div>
+</div></section>
+</main>
+<footer><div class="container"><div class="foot"><b>Freedom Fighters Agency</b><span>Florida · <a href="tel:3053056720">305-305-6720</a> · <a href="mailto:FF.EMP7@GMAIL.COM">FF.EMP7@GMAIL.COM</a></span><a href="agent-opportunity.html">Agent Opportunity</a></div><p class="fine">This website is for educational and informational purposes only and is not legal, tax, or investment advice, an offer of insurance, or a guarantee of coverage. Product availability, premiums, benefits, exclusions, and underwriting decisions vary by insurer and policy. Any coverage recommendation depends on individual circumstances and the applicable policy contract. Review policy documents carefully before making a decision. No testimonial or income claim is implied.</p></div></footer>
+</body></html>
