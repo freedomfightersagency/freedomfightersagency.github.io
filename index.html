@@ -2,431 +2,344 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Freedom Fighters Agency | Life Insurance & Recruiting</title>
-  <meta name="description" content="Freedom Fighters Agency helps families protect income and build long-term financial security. Book a call with us today." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090a0d" />
+  <title>Freedom Fighters Agency | Protect What Matters. Build What’s Next.</title>
+  <meta name="description" content="Freedom Fighters Agency helps families explore life insurance protection and helps motivated people explore a career in financial services. Based in Miami, Florida." />
   <style>
-    :root{
-      --bg:#0b0c10;
-      --card:#111318;
-      --card2:#0f1116;
-      --text:#f6f7fb;
-      --muted:#b7bccb;
+    :root {
+      --bg:#090a0d;
+      --surface:#111318;
+      --surface-2:#171a20;
+      --text:#f7f7f4;
+      --muted:#b9bbc2;
       --gold:#f5c84b;
-      --gold2:#ffdd73;
-      --line:rgba(255,255,255,.10);
-      --shadow: 0 14px 45px rgba(0,0,0,.45);
-      --radius: 18px;
+      --gold-light:#ffe18a;
+      --line:rgba(255,255,255,.12);
+      --gold-line:rgba(245,200,75,.34);
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+      --radius:22px;
+      --content:1180px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1000px 700px at 10% -10%, rgba(245,200,75,.18), transparent 55%),
-        radial-gradient(900px 700px at 90% 10%, rgba(245,200,75,.10), transparent 55%),
-        radial-gradient(1000px 700px at 40% 120%, rgba(255,255,255,.06), transparent 55%),
+        radial-gradient(ellipse at 75% -12%,rgba(245,200,75,.13),transparent 34rem),
+        radial-gradient(ellipse at -10% 38%,rgba(245,200,75,.07),transparent 32rem),
         var(--bg);
-      line-height:1.35;
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
     }
     a{color:inherit}
-    .container{max-width:1120px;margin:0 auto;padding:0 18px}
-
-    /* Topbar */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(1.2) blur(10px);
-      background:rgba(11,12,16,.70);
-      border-bottom:1px solid var(--line);
+    img{max-width:100%}
+    .container{width:min(var(--content),calc(100% - 44px));margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold-light);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}
+    .gold{color:var(--gold)}
+    .muted{color:var(--muted)}
+    .topbar{position:sticky;top:0;z-index:100;background:rgba(9,10,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+    .brand img{width:49px;height:49px;object-fit:cover;border-radius:13px;border:1px solid var(--gold-line);background:#fff}
+    .brand-name{display:block;font-weight:900;font-size:15px;letter-spacing:.025em;line-height:1.2}
+    .brand-tag{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
+    .navlinks{display:flex;align-items:center;gap:26px}
+    .navlinks a{color:#d1d1d4;text-decoration:none;font-size:12px;font-weight:750;transition:color .2s}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .menu-toggle{display:none}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;min-height:47px;padding:0 19px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);color:var(--text);text-decoration:none;font-size:12px;font-weight:850;letter-spacing:.025em;transition:transform .2s,border-color .2s,background .2s;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px);border-color:var(--gold-line);background:rgba(255,255,255,.075)}
+    .btn-primary{color:#17130a;background:linear-gradient(115deg,var(--gold),var(--gold-light));border-color:transparent;box-shadow:0 8px 28px rgba(245,200,75,.15)}
+    .btn-primary:hover{background:linear-gradient(115deg,var(--gold-light),var(--gold));border-color:transparent}
+    .btn-small{min-height:41px;padding-inline:15px}
+    .hero{padding:70px 0 62px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(245,200,75,.09);border-radius:50%;right:-210px;top:15px;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:42px;align-items:center;position:relative;z-index:1}
+    .hero-copy{padding:12px 0}
+    h1{font-size:clamp(43px,6vw,76px);line-height:.99;letter-spacing:-.065em;margin:22px 0 22px;max-width:760px;font-weight:950}
+    h1 .gold{display:block}
+    .hero-lead{max-width:590px;color:#c4c5ca;font-size:16px;line-height:1.8;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .hero-meta{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:30px;color:var(--muted);font-size:11px}
+    .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+    .hero-meta i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block}
+    .hero-visual{position:relative;min-height:550px;border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:#14161b;box-shadow:var(--shadow)}
+    .hero-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 20%,rgba(0,0,0,.12) 42%,rgba(0,0,0,.84) 100%)}
+    .visual-label{position:absolute;z-index:2;left:25px;right:25px;bottom:25px}
+    .visual-label .eyebrow{font-size:10px}
+    .visual-label h2{font-size:28px;line-height:1.12;letter-spacing:-.04em;margin:12px 0 8px;max-width:420px}
+    .visual-label p{color:#dedee0;font-size:12px;margin:0;max-width:410px}
+    .visual-stamp{position:absolute;z-index:2;top:20px;right:20px;border:1px solid rgba(255,255,255,.25);background:rgba(10,11,14,.58);backdrop-filter:blur(10px);border-radius:14px;padding:12px 15px;text-align:right}
+    .visual-stamp strong{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .visual-stamp span{display:block;color:var(--gold-light);font-size:10px;margin-top:3px}
+    .trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.018)}
+    .trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 0}
+    .trust-item{display:flex;align-items:center;justify-content:center;gap:12px;text-align:left}
+    .trust-icon{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--gold-line);border-radius:12px;color:var(--gold);font-size:17px;flex:0 0 auto}
+    .trust-item strong{display:block;font-size:12px}
+    .trust-item small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+    section.section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.04;letter-spacing:-.055em;margin:13px 0 0;font-weight:930}
+    .section-head p{max-width:460px;margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .pillar{position:relative;min-height:265px;padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.014));overflow:hidden;transition:transform .25s,border-color .25s}
+    .pillar:hover{transform:translateY(-5px);border-color:var(--gold-line)}
+    .pillar-number{font-size:11px;color:var(--gold);font-weight:900;letter-spacing:.16em}
+    .pillar-mark{width:47px;height:47px;border:1px solid var(--gold-line);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-size:21px;margin:25px 0 20px}
+    .pillar h3{font-size:19px;letter-spacing:-.025em;margin:0 0 10px}
+    .pillar p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}
+    .pillar a{display:inline-block;margin-top:18px;color:var(--gold-light);font-size:11px;font-weight:850;text-decoration:none}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+    .feature-image{min-height:420px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+    .feature-image img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block}
+    .feature-copy{padding:clamp(26px,4vw,48px);border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#17191f,#101115)}
+    .feature-copy h2{font-size:clamp(29px,3.5vw,43px);line-height:1.05;letter-spacing:-.055em;margin:15px 0}
+    .feature-copy>p{font-size:13px;color:var(--muted);line-height:1.85;margin:0}
+    .check-list{list-style:none;padding:0;margin:25px 0 27px;display:grid;gap:15px}
+    .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:12px;color:#e5e5e7}
+    .check-list li:before{content:"✓";display:grid;place-items:center;width:21px;height:21px;flex:0 0 21px;border-radius:7px;background:rgba(245,200,75,.12);color:var(--gold);font-weight:950}
+    .recruit-section{background:linear-gradient(180deg,transparent,rgba(245,200,75,.035),transparent)}
+    .recruit-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:#111318;box-shadow:var(--shadow)}
+    .recruit-copy{padding:clamp(28px,5vw,58px)}
+    .recruit-copy h2{font-size:clamp(34px,4.2vw,52px);line-height:1;letter-spacing:-.06em;margin:17px 0}
+    .recruit-copy p{font-size:13px;color:var(--muted);line-height:1.85}
+    .recruit-image{min-height:480px;background:#17191e}
+    .recruit-image img{width:100%;height:100%;min-height:480px;object-fit:cover;display:block}
+    .recruit-note{font-size:10px!important;color:#92949c!important;margin-top:18px}
+    .playbook-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .playbook-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+    .playbook-card img{width:100%;height:300px;display:block;object-fit:cover}
+    .playbook-caption{padding:20px 22px}
+    .playbook-caption strong{display:block;font-size:16px}
+    .playbook-caption span{display:block;margin-top:7px;color:var(--muted);font-size:11px;line-height:1.7}
+    .booking{padding:0 0 92px!important}
+    .booking-panel{border:1px solid var(--gold-line);border-radius:28px;overflow:hidden;background:linear-gradient(140deg,rgba(245,200,75,.10),rgba(255,255,255,.025) 45%),var(--surface);box-shadow:var(--shadow)}
+    .booking-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:35px 38px;border-bottom:1px solid var(--line)}
+    .booking-head h2{font-size:clamp(30px,4vw,44px);line-height:1.05;letter-spacing:-.055em;margin:12px 0 0}
+    .booking-head p{font-size:12px;color:var(--muted);margin:9px 0 0}
+    .calendly-frame{width:100%;height:760px;border:0;display:block;background:#fff}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .contact-main{padding:35px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+    .contact-main h2{font-size:clamp(30px,4vw,43px);line-height:1.05;letter-spacing:-.05em;margin:12px 0}
+    .contact-main p{color:var(--muted);font-size:12px;line-height:1.8;max-width:480px}
+    .contact-links{display:grid;gap:12px}
+    .contact-link{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);text-decoration:none}
+    .contact-link small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+    .contact-link strong{display:block;font-size:13px;margin-top:4px}
+    .contact-link em{font-style:normal;color:var(--gold);font-size:18px}
+    .qr-row{display:flex;align-items:center;gap:17px;margin-top:25px;padding-top:23px;border-top:1px solid var(--line)}
+    .qr-row img{width:86px;height:86px;padding:5px;border-radius:12px;background:#fff;object-fit:contain}
+    .qr-row strong{font-size:12px}
+    .qr-row span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+    footer{border-top:1px solid var(--line);padding:28px 0 35px;background:rgba(0,0,0,.16)}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:38px;height:38px;border-radius:10px;object-fit:cover;background:#fff}
+    .footer-brand strong{display:block;font-size:12px}
+    .footer-brand span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{font-size:10px;color:var(--muted);text-decoration:none}
+    .footer-links a:hover{color:var(--gold)}
+    .fine-print{max-width:850px;color:#858791;font-size:10px;line-height:1.7;margin:20px 0 0}
+    @media(max-width:900px){
+      .navlinks{gap:14px}.navlinks a{font-size:11px}
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero{padding-top:48px}.hero-visual{min-height:480px}
+      .section-head{align-items:flex-start;flex-direction:column}
+      .recruit-card{grid-template-columns:1fr}.recruit-image,.recruit-image img{min-height:350px;max-height:480px}
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
-    .brand img{width:46px;height:46px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:#fff}
-    .brand .name{font-weight:800;letter-spacing:.2px}
-    .brand .tag{font-size:12px;color:var(--muted)}
-    .navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center}
-    .navlinks a{font-size:13px;color:var(--muted);text-decoration:none}
-    .navlinks a:hover{color:var(--text)}
-    .actions{display:flex;gap:10px;align-items:center}
-
-    .btn{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:13px;
-      text-decoration:none;
-      display:inline-flex;align-items:center;gap:8px;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-      white-space:nowrap;
+    @media(max-width:680px){
+      .container{width:min(100% - 32px,var(--content))}
+      .nav{min-height:72px}.brand img{width:42px;height:42px}.brand-name{font-size:13px}.brand-tag{font-size:8px}
+      .nav-actions .btn{display:none}
+      .menu-toggle{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--text);font-size:20px}
+      .navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px 22px;background:#0d0e12;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+      .navlinks.open{display:flex}
+      .navlinks a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px}
+      h1{font-size:clamp(42px,13vw,62px)}
+      .hero{padding:37px 0 42px}.hero-lead{font-size:14px}
+      .hero-visual{min-height:390px;border-radius:21px}
+      .visual-label{left:19px;right:19px;bottom:20px}.visual-label h2{font-size:23px}
+      .visual-stamp{top:14px;right:14px}
+      .trust-inner{grid-template-columns:1fr;gap:15px;padding:19px 0}
+      .trust-item{justify-content:flex-start}
+      section.section{padding:66px 0}
+      .pillars,.split,.playbook-grid,.contact-grid{grid-template-columns:1fr}
+      .pillar{min-height:220px}
+      .feature-image,.feature-image img{min-height:290px;max-height:360px}
+      .booking{padding-bottom:66px!important}
+      .booking-head{padding:25px 22px;align-items:flex-start;flex-direction:column}
+      .calendly-frame{height:720px}
+      .contact-main{padding:27px 22px}
+      .qr-row{align-items:center}
+      .footer-inner{flex-direction:column}
     }
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
-    .btn.primary{
-      background:linear-gradient(135deg,var(--gold),var(--gold2));
-      color:#111;
-      border-color:rgba(0,0,0,.15);
-    }
-    .btn.primary:hover{filter:brightness(1.02);transform:translateY(-1px)}
-    .btn.ghost{background:transparent}
-
-    /* Hero */
-    .hero{padding:44px 0 18px}
-    .heroGrid{display:grid;grid-template-columns: 1.1fr .9fr;gap:22px;align-items:stretch}
-    .heroCard{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .heroCard .inner{padding:26px}
-    .kicker{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:12px;font-weight:800;letter-spacing:.3px;
-      color:#161616;
-      background:linear-gradient(135deg,var(--gold),var(--gold2));
-      padding:7px 10px;border-radius:999px;
-    }
-    h1{margin:14px 0 10px;font-size:40px;line-height:1.05;letter-spacing:-.7px}
-    .sub{color:var(--muted);font-size:15px;max-width:54ch}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
-    .badge{
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.22);
-      padding:10px 12px;
-      border-radius:14px;
-      min-width:170px;
-    }
-    .badge b{display:block;font-size:13px}
-    .badge span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
-
-    .heroMedia{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:var(--card);
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-    .heroMedia img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
-    .heroMedia .overlay{
-      position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
-      pointer-events:none;
-    }
-    .heroMedia .ctaBox{
-      position:absolute;left:14px;right:14px;bottom:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(15,17,22,.70);
-      backdrop-filter: blur(10px);
-      border-radius:16px;
-      padding:14px;
-      display:flex;gap:10px;align-items:center;justify-content:space-between;
-    }
-    .ctaBox .mini{font-size:12px;color:var(--muted)}
-    .ctaBox .mini b{color:var(--text)}
-
-    /* Sections */
-    section{padding:34px 0}
-    .sectionTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}
-    .sectionTitle h2{margin:0;font-size:22px;letter-spacing:-.2px}
-    .sectionTitle p{margin:0;color:var(--muted);font-size:13px;max-width:55ch}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-
-    .card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:0 10px 28px rgba(0,0,0,.30);
-    }
-    .card h3{margin:0 0 8px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-
-    .mediaCard{padding:0;overflow:hidden}
-    .mediaCard img{width:100%;height:280px;object-fit:cover;display:block}
-    .mediaCard .cap{padding:14px 16px}
-    .cap b{display:block}
-    .cap span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
-
-    /* CTA */
-    .cta{
-      border:1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(800px 400px at 20% 0%, rgba(245,200,75,.22), transparent 60%),
-        radial-gradient(700px 420px at 90% 40%, rgba(255,221,115,.14), transparent 60%),
-        rgba(255,255,255,.04);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .ctaInner{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch;padding:18px}
-    .ctaLeft{padding:8px 8px 8px 12px}
-    .ctaLeft h2{margin:6px 0 10px;font-size:24px}
-    .ctaLeft p{margin:0;color:var(--muted);font-size:13px;max-width:62ch}
-    .ctaBtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-
-    .qrBox{
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(15,17,22,.70);
-      border-radius:20px;
-      padding:14px;
-      display:flex;gap:12px;align-items:center;justify-content:space-between;
-      min-height:160px;
-    }
-    .qrBox img{width:120px;height:120px;object-fit:contain;border-radius:14px;background:#fff;padding:6px}
-    .qrBox .qrText b{display:block}
-    .qrBox .qrText span{display:block;margin-top:8px;color:var(--muted);font-size:12px}
-
-    /* Calendly */
-    .calWrap{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:0 10px 28px rgba(0,0,0,.35);
-    }
-    .calHead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
-    .calHead b{font-size:14px}
-    .calHead span{font-size:12px;color:var(--muted)}
-    .calFrame{width:100%;height:760px;border:0;background:#fff}
-
-    /* Footer */
-    footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--line)}
-    .foot{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-    .foot b{color:var(--text)}
-    .foot a{color:var(--muted);text-decoration:none}
-    .foot a:hover{color:var(--text)}
-    .fine{font-size:12px;color:rgba(183,188,203,.85);max-width:90ch;margin-top:10px}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr;}
-      .heroMedia img{height:420px}
-      .grid3{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-      .ctaInner{grid-template-columns:1fr}
-      h1{font-size:34px}
-      .navlinks{display:none}
-      .calFrame{height:820px}
-    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
-
   <div class="topbar">
     <div class="container">
-      <div class="nav">
-        <div class="brand">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Freedom Fighters Agency home">
           <img src="client_logo.jpeg" alt="Freedom Fighters Agency logo" />
-          <div>
-            <div class="name">Freedom Fighters Agency</div>
-            <div class="tag">Life Insurance • Financial Protection • Recruiting</div>
-          </div>
-        </div>
-
-        <div class="navlinks">
-          <a href="#clients">For Clients</a>
-          <a href="#recruits">For Recruits</a>
-          <a href="#calendly">Book</a>
+          <span><span class="brand-name">FREEDOM FIGHTERS AGENCY</span><span class="brand-tag">Protection · Education · Opportunity</span></span>
+        </a>
+        <div class="navlinks" id="navlinks">
+          <a href="#solutions">What We Do</a>
+          <a href="#clients">Family Protection</a>
+          <a href="#recruits">Join the Team</a>
+          <a href="#playbook">Our Playbook</a>
           <a href="#contact">Contact</a>
         </div>
-
-        <div class="actions">
-          <a class="btn ghost" href="tel:3053056720">Call</a>
-          <a class="btn primary" href="#calendly">Book a Free Call</a>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-small" href="#calendly">Book a Conversation <span aria-hidden="true">↗</span></a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="container">
-      <div class="heroGrid">
-        <div class="heroCard">
-          <div class="inner">
-            <span class="kicker">⚡ Fast quotes • Simple process • Real protection</span>
-            <h1>Protect your family’s future — and build real financial freedom.</h1>
-            <p class="sub">We help families get properly covered and show motivated people how to build income in the life insurance business.</p>
-
-            <div class="badges">
-              <div class="badge"><b>For Clients</b><span>Term & permanent options tailored to your budget.</span></div>
-              <div class="badge"><b>For Recruits</b><span>Training, mentorship, and a clear path to growth.</span></div>
-              <div class="badge"><b>Book Online</b><span>Choose a time that works for you on Calendly.</span></div>
-            </div>
-
-            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-              <a class="btn primary" href="#calendly">Schedule on Calendly</a>
-              <a class="btn" href="mailto:FF.EMP7@GMAIL.COM">Email Us</a>
-              <a class="btn" href="#clients">See How We Help</a>
-            </div>
-
-            <div style="margin-top:14px;color:var(--muted);font-size:12px">
-              Call/Text: <b style="color:var(--text)">305-305-6720</b> • Email: <b style="color:var(--text)">FF.EMP7@GMAIL.COM</b>
-            </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Miami, Florida · Financial services</span>
+          <h1>Protect what matters.<span class="gold">Build what’s next.</span></h1>
+          <p class="hero-lead">Your family deserves a thoughtful protection strategy. Your ambition deserves room to grow. Freedom Fighters Agency brings education, guidance, and opportunity together—so you can take your next step with confidence.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#calendly">Explore Your Options <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="#recruits">Explore the Opportunity</a>
+          </div>
+          <div class="hero-meta">
+            <span><i></i> Personal guidance</span>
+            <span><i></i> Education-first conversations</span>
+            <span><i></i> Flexible online booking</span>
           </div>
         </div>
-
-        <div class="heroMedia" aria-label="Freedom Fighters Agency hero image">
-          <img src="ff_panels.png" alt="Financial freedom and protection visuals" />
-          <div class="overlay"></div>
-          <div class="ctaBox">
-            <div class="mini"><b>Ready to get started?</b><br/>Book your free call in under 60 seconds.</div>
-            <a class="btn primary" href="#calendly">Book Now</a>
+        <div class="hero-visual">
+          <img src="ff_panels.png" alt="Freedom Fighters financial protection and financial education visual" />
+          <div class="visual-stamp"><strong>Freedom Fighters</strong><span>Purpose with a plan</span></div>
+          <div class="visual-label">
+            <span class="eyebrow">A stronger foundation starts here</span>
+            <h2>Make informed moves for the people and future you care about.</h2>
+            <p>Explore family protection, financial education, and a business opportunity built around learning and service.</p>
           </div>
         </div>
       </div>
     </div>
   </header>
 
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span><span><strong>Family-first protection</strong><small>Understand your coverage choices</small></span></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">↗</span><span><strong>Financial education</strong><small>Build knowledge before decisions</small></span></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">✦</span><span><strong>Agent development</strong><small>Learn with training and mentorship</small></span></div>
+    </div>
+  </div>
+
   <main>
-    <section id="clients">
+    <section class="section" id="solutions">
       <div class="container">
-        <div class="sectionTitle">
-          <div>
-            <h2>For Clients</h2>
-            <p>Get covered the right way — protect income, cover final expenses, and build a plan your family can rely on.</p>
-          </div>
-          <a class="btn" href="#calendly">Get a Quote Call</a>
+        <div class="section-head">
+          <div><span class="eyebrow">The Freedom Fighters approach</span><h2>Three ways to move<br><span class="gold">your future forward.</span></h2></div>
+          <p>Whether you’re protecting the people who count on you or exploring a new professional direction, start with clear information and a conversation about your goals.</p>
         </div>
+        <div class="pillars">
+          <article class="pillar"><span class="pillar-number">01 / PROTECT</span><div class="pillar-mark" aria-hidden="true">⌂</div><h3>Family Protection</h3><p>Explore life insurance options that may help protect loved ones, income, and financial responsibilities if the unexpected happens.</p><a href="#clients">Explore protection ↗</a></article>
+          <article class="pillar"><span class="pillar-number">02 / LEARN</span><div class="pillar-mark" aria-hidden="true">◎</div><h3>Wealth Education</h3><p>Build a stronger financial foundation through practical conversations about budgeting, saving, long-term planning, and financial concepts.</p><a href="#playbook">Explore the playbook ↗</a></article>
+          <article class="pillar"><span class="pillar-number">03 / GROW</span><div class="pillar-mark" aria-hidden="true">✦</div><h3>Business Opportunity</h3><p>Learn what it takes to enter the financial-services industry, develop professional skills, and explore an agent opportunity.</p><a href="#recruits">Explore the opportunity ↗</a></article>
+        </div>
+      </div>
+    </section>
 
-        <div class="grid2">
-          <div class="card mediaCard">
-            <img src="ff_collage_buyterm.png" alt="Buy term and invest the difference" />
-            <div class="cap">
-              <b>Simple strategy. Real protection.</b>
-              <span>We’ll walk you through coverage options, budget, and what makes sense for your goals.</span>
-            </div>
-          </div>
-
-          <div class="grid3" style="grid-template-columns:1fr;gap:14px">
-            <div class="card">
-              <h3>✅ Fast, clear recommendations</h3>
-              <p>No pressure. We educate you and help you choose a policy that fits your needs.</p>
-            </div>
-            <div class="card">
-              <h3>✅ Family-first planning</h3>
-              <p>Income protection, debt coverage, final expense, and long-term stability.</p>
-            </div>
-            <div class="card">
-              <h3>✅ Easy next step</h3>
-              <p>Book a free call — we’ll ask a few questions and map out the best options.</p>
-            </div>
+    <section class="section" id="clients">
+      <div class="container">
+        <div class="split">
+          <div class="feature-image"><img src="ff_collage_buyterm.png" alt="Financial education graphic about buying term life insurance and investing the difference" loading="lazy" /></div>
+          <div class="feature-copy">
+            <span class="eyebrow">For families and individuals</span>
+            <h2>Protection should start with <span class="gold">understanding.</span></h2>
+            <p>Life insurance is not one-size-fits-all. We help you understand the questions to ask and the options available for your situation before you make a decision.</p>
+            <ul class="check-list">
+              <li>Review mortgage, income, debt, and family responsibilities</li>
+              <li>Understand term and permanent life insurance options</li>
+              <li>Discuss coverage needs, affordability, and eligibility</li>
+              <li>Take the time to make an informed choice—without pressure</li>
+            </ul>
+            <a class="btn btn-primary" href="#calendly">Start a protection conversation ↗</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="recruits">
+    <section class="section recruit-section" id="recruits">
       <div class="container">
-        <div class="sectionTitle">
-          <div>
-            <h2>For Future Agents</h2>
-            <p>Want to learn the business and build your own income stream? We’re recruiting coachable, motivated people.</p>
+        <div class="recruit-card">
+          <div class="recruit-copy">
+            <span class="eyebrow">For future financial professionals</span>
+            <h2>Turn your ambition into <span class="gold">a new direction.</span></h2>
+            <p>Interested in the financial-services business? Explore what it means to become an agent, learn the licensing path, and see how training and mentorship can support your development.</p>
+            <ul class="check-list">
+              <li>Learn about the industry and agent responsibilities</li>
+              <li>Explore training, mentorship, and professional development</li>
+              <li>Understand licensing requirements and the steps to get started</li>
+              <li>Ask questions and decide whether the opportunity fits your goals</li>
+            </ul>
+            <a class="btn btn-primary" href="mailto:FF.EMP7@GMAIL.COM?subject=Agent%20Opportunity%20-%20Freedom%20Fighters%20Agency">Ask About Joining the Agency ↗</a>
+            <p class="recruit-note">Business opportunity details, licensing requirements, compensation, and results vary. No income or advancement is guaranteed.</p>
           </div>
-          <a class="btn" href="#calendly">Book a Recruit Call</a>
-        </div>
-
-        <div class="grid2">
-          <div class="card mediaCard">
-            <img src="ff_recruiting.png" alt="Recruiting and mentorship visuals" />
-            <div class="cap">
-              <b>Mentorship + Training</b>
-              <span>We help you develop skills, confidence, and a consistent system to grow.</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>What you get</h3>
-            <p style="margin-top:10px">• Structured training + scripts<br>
-              • Help with follow-ups & consistency<br>
-              • Leadership development & accountability<br>
-              • A clear path to promotion and agency growth</p>
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="#calendly">Talk to Us</a>
-              <a class="btn" href="mailto:FF.EMP7@GMAIL.COM?subject=Recruit%20Interest%20-%20Freedom%20Fighters%20Agency">Email Recruiting</a>
-            </div>
-          </div>
+          <div class="recruit-image"><img src="ff_recruiting.png" alt="Freedom Fighters Agency recruiting and mentorship graphic" loading="lazy" /></div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section" id="playbook">
       <div class="container">
-        <div class="cta">
-          <div class="ctaInner">
-            <div class="ctaLeft">
-              <div class="kicker" style="display:inline-flex">📌 Next step: Book your free call</div>
-              <h2>Let’s get you covered — or get you started.</h2>
-              <p>Choose a time on Calendly, and we’ll handle the rest. If you prefer, call or email us directly.</p>
-
-              <div class="ctaBtns">
-                <a class="btn primary" href="#calendly">Schedule on Calendly</a>
-                <a class="btn" href="tel:3053056720">Call 305-305-6720</a>
-                <a class="btn" href="mailto:FF.EMP7@GMAIL.COM">FF.EMP7@GMAIL.COM</a>
-              </div>
-            </div>
-
-            <div class="qrBox">
-              <div class="qrText">
-                <b>Scan to visit the site</b>
-                <span>Use your phone camera to open:<br><span style="color:var(--text)">freedomfightersagency.github.io</span></span>
-              </div>
-              <img src="ff_qr.png" alt="QR code to Freedom Fighters Agency website" />
-            </div>
-          </div>
+        <div class="section-head">
+          <div><span class="eyebrow">Learn. Prepare. Take action.</span><h2>The Freedom Fighters<br><span class="gold">playbook.</span></h2></div>
+          <p>Use our educational visuals as a starting point for better questions and more informed conversations about protecting your family and planning ahead.</p>
+        </div>
+        <div class="playbook-grid">
+          <article class="playbook-card"><img src="ff_collage_buyterm.png" alt="Buy term and invest the difference educational graphic" loading="lazy" /><div class="playbook-caption"><strong>Understand your protection strategy</strong><span>Explore the role term life insurance may play in a broader financial plan. Individual needs and circumstances differ.</span></div></article>
+          <article class="playbook-card"><img src="ff_panels.png" alt="Freedom Fighters financial education and agency panels" loading="lazy" /><div class="playbook-caption"><strong>Build your financial knowledge</strong><span>Start with the fundamentals, ask questions, and make decisions that reflect your goals and responsibilities.</span></div></article>
         </div>
       </div>
     </section>
 
-    <section id="calendly">
+    <section class="section booking" id="calendly">
       <div class="container">
-        <div class="sectionTitle">
-          <div>
-            <h2>Book Your Call</h2>
-            <p>Pick a time that works for you. You’ll get a confirmation and reminders automatically.</p>
+        <div class="booking-panel">
+          <div class="booking-head">
+            <div><span class="eyebrow">Your next step</span><h2>Let’s have a conversation.</h2><p>Choose a time that works for you. We’ll connect and discuss what you’re looking to accomplish.</p></div>
+            <a class="btn btn-primary" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener noreferrer">Open Calendly ↗</a>
           </div>
-          <a class="btn" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener">Open Calendly ↗</a>
-        </div>
-
-        <div class="calWrap">
-          <div class="calHead">
-            <b>Calendly Scheduling</b>
-            <span>https://calendly.com/myfiancialfreedom</span>
-          </div>
-          <iframe class="calFrame" src="https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1" title="Calendly booking"></iframe>
+          <iframe class="calendly-frame" src="https://calendly.com/myfiancialfreedom?hide_gdpr_banner=1" title="Schedule a conversation with Freedom Fighters Agency" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section" id="contact">
       <div class="container">
-        <div class="sectionTitle">
-          <div>
-            <h2>Contact</h2>
-            <p>Prefer to reach out directly? We respond quickly.</p>
+        <div class="contact-grid">
+          <div class="contact-main">
+            <span class="eyebrow">Stay connected</span>
+            <h2>Ready when <span class="gold">you are.</span></h2>
+            <p>Have a question about life insurance, financial education, or the agent opportunity? Reach out directly or book a time online.</p>
+            <div class="qr-row"><img src="ff_qr.png" alt="QR code for Freedom Fighters Agency website" loading="lazy" /><div><strong>Keep us one scan away.</strong><span>Scan to visit the Freedom Fighters Agency website.</span></div></div>
           </div>
-        </div>
-
-        <div class="grid3">
-          <div class="card">
-            <h3>Call / Text</h3>
-            <p><a href="tel:3053056720">305-305-6720</a></p>
-          </div>
-          <div class="card">
-            <h3>Email</h3>
-            <p><a href="mailto:FF.EMP7@GMAIL.COM">FF.EMP7@GMAIL.COM</a></p>
-          </div>
-          <div class="card">
-            <h3>Website</h3>
-            <p><a href="https://freedomfightersagency.github.io/" target="_blank" rel="noopener">freedomfightersagency.github.io</a></p>
+          <div class="contact-links">
+            <a class="contact-link" href="tel:3053056720"><span><small>Call or text</small><strong>305-305-6720</strong></span><em aria-hidden="true">↗</em></a>
+            <a class="contact-link" href="mailto:FF.EMP7@GMAIL.COM"><span><small>Email</small><strong>FF.EMP7@GMAIL.COM</strong></span><em aria-hidden="true">↗</em></a>
+            <a class="contact-link" href="https://calendly.com/myfiancialfreedom" target="_blank" rel="noopener noreferrer"><span><small>Schedule online</small><strong>Book through Calendly</strong></span><em aria-hidden="true">↗</em></a>
+            <a class="contact-link" href="https://www.tiktok.com/@frantzyfrancois2" target="_blank" rel="noopener noreferrer"><span><small>Follow along</small><strong>TikTok · @frantzyfrancois2</strong></span><em aria-hidden="true">↗</em></a>
           </div>
         </div>
       </div>
@@ -435,37 +348,29 @@
 
   <footer>
     <div class="container">
-      <div class="foot">
-        <div>
-          <b>Freedom Fighters Agency</b><br>
-          <span>Life Insurance • Financial Protection • Recruiting</span>
-          <div class="fine">This site is for informational purposes only and does not constitute legal or financial advice. Coverage availability and pricing vary based on underwriting and eligibility.</div>
-        </div>
-        <div>
-          <div><b>Quick Links</b></div>
-          <div style="margin-top:8px;display:grid;gap:6px">
-            <a href="#clients">For Clients</a>
-            <a href="#recruits">For Recruits</a>
-            <a href="#calendly">Book a Call</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
+      <div class="footer-inner">
+        <div class="footer-brand"><img src="client_logo.jpeg" alt="" /><div><strong>FREEDOM FIGHTERS AGENCY</strong><span>Life insurance · Financial education · Agent opportunity</span></div></div>
+        <div class="footer-links"><a href="#solutions">What We Do</a><a href="#clients">Family Protection</a><a href="#recruits">Join the Team</a><a href="#calendly">Book a Call</a><a href="#contact">Contact</a></div>
       </div>
+      <p class="fine-print">This website is for informational and educational purposes only and is not legal, tax, or investment advice. Life insurance products, features, premiums, and availability are subject to carrier terms, underwriting, and eligibility. Product recommendations depend on individual circumstances. Agent business opportunity, compensation, licensing requirements, and results vary; no income or advancement is guaranteed. Please speak with an appropriately licensed professional about your individual situation.</p>
     </div>
   </footer>
 
   <script>
-    // Smooth anchor scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        if(!id || id === '#') return;
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
+    const menuToggle = document.getElementById('menuToggle');
+    const navlinks = document.getElementById('navlinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navlinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = isOpen ? '×' : '☰';
     });
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+      menuToggle.textContent = '☰';
+    }));
   </script>
 </body>
 </html>
